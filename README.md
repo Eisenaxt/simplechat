@@ -10,14 +10,12 @@ Eine einfache CLI-Chat-Anwendung, die demonstriert, wie ein KI-Chat-Client im Ke
 
 ## Voraussetzungen
 
-- Node.js oder Bun
+- Bun
 - Lokaler LLM-Server (z.B. Jan oder ollama)
 
 ## Nutzung
 
 ```bash
-node chat.js
-# oder mit Bun:
 bun run chat.js
 ```
 
