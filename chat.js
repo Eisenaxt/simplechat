@@ -33,7 +33,8 @@ for await (const line of console) {
     break;
   }
 
+  await Bun.write(Bun.stdout, "Thinking...");
   const response = await ask(input);
-  await Bun.write(Bun.stdout, `Bot: ${response}\n`);
+  await Bun.write(Bun.stdout, `\x1b[2K\rBot: ${response}\n`);
   await Bun.write(Bun.stdout, "Du: ");
 }
