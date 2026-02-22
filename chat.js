@@ -22,18 +22,18 @@ async function ask(prompt) {
   return reply;
 }
 
-console.log("CLI Chat - Tippe 'exit' zum Beenden\n");
+await Bun.write(Bun.stdout, "CLI Chat - Tippe 'exit' zum Beenden\n");
 
-process.stdout.write("Du: ");
+await Bun.write(Bun.stdout, "Du: ");
 for await (const line of console) {
   const input = line.trim();
   
   if (!input || input.toLowerCase() === "exit") {
-    console.log("Tschüss!");
+    await Bun.write(Bun.stdout, "Tschüss!");
     break;
   }
 
   const response = await ask(input);
-  console.log(`Bot: ${response}\n`);
-  process.stdout.write("Du: ");
+  await Bun.write(Bun.stdout, `Bot: ${response}\n`);
+  await Bun.write(Bun.stdout, "Du: ");
 }
